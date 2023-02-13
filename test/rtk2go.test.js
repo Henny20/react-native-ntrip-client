@@ -1,20 +1,24 @@
 const { NtripClient } = require('../index');
 
 const options = {
-  host: 'rtk2go.com',
+  host: 'caster.centipede.fr',
   port: 2101,
-  mountpoint: 'ABIOS',
-  username: 'test',
-  password: 'test',
+  mountpoint: 'TEST',
+  username: 'centipede',
+  password: 'centipede',
+  userAgent: 'NTRIP',
   xyz: [-1983430.2365, -4937492.4088, 3505683.7925],
-  // the interval of send nmea, unit is millisecond
   interval: 2000
 };
 
 const client = new NtripClient(options);
 
 client.on('data', (data) => {
-  console.log(data);
+  string = data.toString()
+  console.log(string);
+  if (string.indexOf("ENDSOURCETABLE") !== -1){
+    client.close()
+  }
 });
 
 client.on('close', () => {
@@ -25,4 +29,4 @@ client.on('error', (err) => {
   console.log(err);
 });
 
-client.run();
+client._connect();
