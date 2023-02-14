@@ -1,6 +1,6 @@
 {
   "name": "react-native-ntrip-client",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The client for connect ntripcaster https://github.com/dxhbiz/ntrip-client improved with `react-native-tcp-socket` and `ntrip-decoder-source-table`\n",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/matteodcr/react-native-ntrip-client",
   "dependencies": {
     "ntrip-decoder": "^1.0.1",
-    "ntrip-decoder-source-table": "^1.0.2",
+    "ntrip-decoder-source-table": "^1.0.3",
     "react-native-tcp-socket": "^6.0.6"
   }
 }
