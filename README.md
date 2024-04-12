@@ -18,21 +18,5 @@ const options = {
 
 const client = new NtripClient(options);
 
-client.on('data', (data) => {
-  string = data.toString()
-  console.log(string);
-  if (string.indexOf("ENDSOURCETABLE") !== -1){
-    client.close()
-  }
-});
-
-client.on('close', () => {
-  console.log('client close');
-});
-
-client.on('error', (err) => {
-  console.log(err);
-});
-
-client._connect();
+client.run();
 ```
